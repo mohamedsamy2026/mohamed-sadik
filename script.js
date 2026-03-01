@@ -120,18 +120,16 @@ images.forEach(img => {
     img.addEventListener('click', () => {
         lightbox.classList.add('active');
         lightboxImg.src = img.src;
-        document.body.style.overflow = 'hidden'; // منع السكرول والشهادة مفتوحة
+        document.body.style.overflow = 'hidden'; 
     });
 });
 
-// قفل الصورة عند الضغط على الـ X
 closeBtn.addEventListener('click', (e) => {
     e.stopPropagation(); // منع تداخل الأحداث
     lightbox.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
 
-// قفل الصورة عند الضغط في أي مكان فاضي
 lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) {
         lightbox.classList.remove('active');
@@ -139,18 +137,14 @@ lightbox.addEventListener('click', (e) => {
     }
 });
 
-// كود تحريك سلايدر الشهادات
 const slider = document.querySelector('.achievements-slider');
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 
-// زرار التالي
 nextBtn.addEventListener('click', () => {
-    // بيحرك السلايدر مسافة 330 بكسل (عرض الشهادة + الـ gap)
     slider.scrollBy({ left: 330, behavior: 'smooth' });
 });
 
-// زرار السابق
 prevBtn.addEventListener('click', () => {
     slider.scrollBy({ left: -330, behavior: 'smooth' });
 });
