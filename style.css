@@ -814,34 +814,50 @@ body.light-mode .exp-card:hover .exp-icon i {
 .dark-mode #achievements{
     background-color: #090e23 !important;
 }
-
-.video-container {
+.videos-container {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
-    cursor: pointer;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px;
 }
 
 .video-card {
-    flex: 1;
+    flex: 0 1 calc(33.33% - 20px); 
     min-width: 300px;
-    max-width: 500px;
-    border-radius: 20px;
+    background: #fff;
+    border-radius: 15px;
     overflow: hidden;
-    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .video-card video {
     width: 100%;
-    border-radius: 20px 20px 0 0;
-    display: block;
+    height: 250px; 
+    object-fit: cover; 
+    background: #000;
 }
 
 .video-card h3 {
-    padding: 15px;
-    font-size: 20px;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #00d4ff;
+}
+
+@media (max-width: 992px) {
+    .video-card {
+        flex: 0 1 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 600px) {
+    .video-card {
+        flex: 0 1 100%; 
+    }
 }
 
 .achievements-grid {
