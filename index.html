@@ -7,7 +7,7 @@
 
 
     <!-- Library fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- icons -->
     <link rel="shortcut icon" href="img/SADEK-removebg-preview.png" type="image/x-icon" />
@@ -22,12 +22,18 @@
         <i class="fa-solid fa-bars active"></i>
         <i class="fa-solid fa-xmark"></i>
       </div>
+      <!-- زر الوضع اليلي والنهار -->
+      <div class="container">
+        <div class="toggle" id="toggle" aria-pressed="false" role="button" tabindex="0">
+          <div class="circle" id="circle">☀️</div>
+        </div>
+      </div>
       <nav class="navbar">
         <ul>
           <li><a href="#home">الرئيسية</a></li>
           <li><a href="#about">عن الكابتن</a></li>
-          <li><a href="#expertise">مجالات الخبرة</a></li> 
-          <li><a href="#portfolio">معرض الأعمال</a></li>
+          <li><a href="#experience">مجالات الخبرة</a></li> 
+          <li><a href="#achievements">معرض الأعمال</a></li>
           <li><a href="#contact">تواصل الآن</a></li>
       </ul>
       </nav>
@@ -55,7 +61,7 @@
 
           <div class="cta-buttons">
             <a href="#contact" class="btn-main">احجز الآن</a>
-            <a href="#portfolio" class="btn-sub">شاهد سابقة الأعمال</a>
+            <a href="#achievements" class="btn-sub">شاهد سابقة الأعمال</a>
           </div>
         </div>
       </div>
@@ -96,8 +102,8 @@
 
   <!-- Expertise Start -->
 
-  <section id="experience-fields">
-    <div class="container">
+  <section id="experience">
+    <div class="container-1">
         <h2 class="section-title">مجالات <span>الخبرة والتمكين</span></h2>
         <p class="section-subtitle">خدمات رياضية متكاملة تجمع بين العلم الأكاديمي والخبرة الميدانية</p>
         
@@ -142,6 +148,159 @@
 </section>
 
   <!-- Expertise End -->
+
+  <!-- portfolio Start -->
+
+<section id="achievements" class="reveal">
+    <h2 class="section-title">معرض <span>الإنجازات والشهادات</span></h2>
+    
+    <div class="video-container">
+        <div class="video-card">
+            <video controls>
+                <source src="vidies/videi1.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <h3>تدريبات الإنقاذ العملي</h3>
+        </div>
+        <div class="video-card">
+            <video controls>
+                <source src="vidies/video2.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <h3>مهارات السباحة الاحترافية</h3>
+        </div>
+    </div>
+    
+    <div class="slider-wrapper">
+        <button class="prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        
+        <div class="achievements-slider">
+            <div class="achievement-item">
+                <img src="Testimonials/degla_experience.webp" alt="خبرة وادي دجلة">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>خبرة وادي دجلة</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/graduation.webp" alt="شهادة التخرج">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>شهادة التخرج</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/rescue_card.webp" alt="كارنيه الإنقاذ">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>كارنيه الإنقاذ</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/nutrition1.webp" alt="دبلومة التغذية 1">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>دبلومة التغذية 1</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/nutrition2.webp" alt="دبلومة التغذية 2">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>دبلومة التغذية 2</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/massage.webp" alt="شهادة تدليك">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>شهادة تدليك</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/rehab1.webp" alt="تأهيل 1">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>إصابات وتأهيل 1</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/rehab2.webp" alt="تأهيل 2">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>إصابات وتأهيل 2</span>
+            </div>
+            
+            <div class="achievement-item">
+                <img src="Testimonials/shop.webp" alt="تسويق">
+                <p class="click-hint">انقر علي الصوره للتكبير <i class="fas fa-search-plus"></i></p>
+                <span>شهادة التسويق</span>
+            </div>
+        </div>
+
+        <button class="next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" id="closeLightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+  <!-- portfolio End -->
+
+  <!-- Contact Start -->
+<footer class="main-footer" id="contact">
+    <div class="footer-container">
+        
+        <div class="footer-section social-side">
+            <h3 class="footer-title">تواصل معي</h3>
+            <div class="social-circles-wrapper" style="margin-bottom: 30px;">
+                <a href="https://wa.me/201022349414" target="_blank" class="social-circle wa">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="tel:+201022349414" class="social-circle ph">
+                    <i class="fa-solid fa-phone-flip"></i>
+                </a>
+
+            </div>
+
+            <h3 class="footer-title">تابعني على</h3>
+            <div class="social-circles-wrapper">
+                <a href="https://www.facebook.com/mohamed.elturk.75" target="_blank" class="social-circle fb">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/mohamedelturk?igsh=YXdod3libWR6dHhw" target="_blank" class="social-circle ig">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section logo-side">
+            <div class="footer-logo-circle">
+                <img src="img/mountain .webp" alt="كابتن محمد صادق">
+            </div>
+            <p class="footer-slogan">مدرب سباحة وإنقاذ معتمد</p>
+        </div>
+
+       <div class="footer-section contact-side">
+    <h3 class="footer-title">بياناتي</h3>
+    
+    <div class="footer-link-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>6 أكتوبر، الشيخ زايد</span>
+    </div>
+
+    <div class="footer-link-item">
+        <i class="fa-solid fa-person-swimming"></i>
+        <span>تدريب خاص وفردي</span>
+    </div>
+
+    <div class="footer-link-item">
+        <i class="fa-solid fa-circle-check" style="color: #00ff88;"></i>
+        <span>متاح للحجز الآن</span>
+    </div>
+</div>
+
+    </div>
+
+    <div class="footer-copyrights">
+        <p>تم التطوير بواسطة <span class="developer-name">محمد سامي</span> &copy; 2026</p>
+    </div>
+</footer>
+  
+  <!-- Contact End -->
     <script src="script.js"></script>
 </body>
 </html>

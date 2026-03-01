@@ -49,3 +49,108 @@ window.addEventListener("scroll", reveal);
 reveal();
 
 /* About End */
+
+
+
+// ==========================================
+// الوضع الليلي/النهاري مع تغيير اللوجو يبدأ
+// ==========================================
+
+
+
+(function() {
+  const KEY = 'mode';
+  const body = document.body;
+  const toggle = document.getElementById('toggle');
+  const circle = document.getElementById('circle');
+
+  // 1. استرجاع الوضع المحفوظ أو استخدام الفاتح كافتراضي
+  const savedMode = localStorage.getItem(KEY) || 'light-mode';
+  body.classList.add(savedMode);
+  updateUI(savedMode === 'dark-mode');
+
+  // 2. وظيفة التبديل
+  function toggleMode() {
+    const isDark = body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode', !isDark);
+    
+    localStorage.setItem(KEY, isDark ? 'dark-mode' : 'light-mode');
+    updateUI(isDark);
+  }
+
+// 3. تحديث شكل الزر والنص فقط
+function updateUI(isDark) {
+  if (isDark) {
+    // لما يكون المود غامق، حط أيقونة الهلال اللي إنت اخترتها
+    circle.innerHTML = '<i class="fa-solid fa-moon fa-flip-horizontal" style="color: rgb(255, 255, 255);"></i>';
+  } else {
+    // لما يكون المود فاتح، رجع الشمس (أو أي أيقونة تانية)
+    circle.innerHTML = '☀️'; 
+  }
+  
+  toggle.setAttribute('aria-pressed', isDark);
+}
+
+  // 4. الأحداث (الضغط بالكيبورد أو الماوس)
+  toggle.addEventListener('click', toggleMode);
+  toggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMode();
+    }
+  });
+})();
+
+
+// ==========================================
+//  الوضع الليلي/النهاري مع تغيير اللوجو انتهي
+// ==========================================
+
+
+
+
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('closeLightbox');
+const images = document.querySelectorAll('.achievement-item img');
+
+// فتح الصورة
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        document.body.style.overflow = 'hidden'; // منع السكرول والشهادة مفتوحة
+    });
+});
+
+// قفل الصورة عند الضغط على الـ X
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // منع تداخل الأحداث
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+// قفل الصورة عند الضغط في أي مكان فاضي
+lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// كود تحريك سلايدر الشهادات
+const slider = document.querySelector('.achievements-slider');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+// زرار التالي
+nextBtn.addEventListener('click', () => {
+    // بيحرك السلايدر مسافة 330 بكسل (عرض الشهادة + الـ gap)
+    slider.scrollBy({ left: 330, behavior: 'smooth' });
+});
+
+// زرار السابق
+prevBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -330, behavior: 'smooth' });
+});
