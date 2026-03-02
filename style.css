@@ -353,6 +353,7 @@ body.light-mode .navbar ul li a {
     color: #475569;
     margin-bottom: 40px;
     line-height: 1.4;
+    text-align: center;
 }
 
 #home .row img {
@@ -814,6 +815,9 @@ body.light-mode .exp-card:hover .exp-icon i {
 .dark-mode #achievements{
     background-color: #090e23 !important;
 }
+/* فديوهات يبدأ */
+
+
 .videos-container {
     display: flex;
     flex-wrap: wrap; 
@@ -842,6 +846,13 @@ body.light-mode .exp-card:hover .exp-icon i {
     background: #000;
 }
 
+
+.achievement-item:hover {
+    transform: translateY(-10px);
+    border-color: #00d4ff;
+}
+
+
 .video-card h3 {
     margin-top: 15px;
     font-size: 18px;
@@ -859,6 +870,13 @@ body.light-mode .exp-card:hover .exp-icon i {
         flex: 0 1 100%; 
     }
 }
+
+/* فديوهات تنتهي */
+
+
+
+
+
 
 .achievements-grid {
     display: grid;
@@ -925,10 +943,6 @@ body.light-mode .video-card h3, body.light-mode .achievement-item span {
      color: #03a7c7; 
     }
 
-.achievement-item:hover, .video-card:hover {
-    transform: translateY(-10px);
-    border-color: #00d4ff;
-}
 
 
 
@@ -1339,8 +1353,10 @@ body.light-mode .footer-copyrights {
          align-items: center;
          }
     .footer-title::after { 
-        right: 50%; transform: translateX(50%); 
-        left: auto; 
+ 
+        left: auto;
+        width: 100%;
+        margin: auto; 
     }
 }
 
@@ -1349,6 +1365,77 @@ body.light-mode .footer-copyrights {
 
 /* media Start */
 
+@media (max-width: 1500px) {
+    /* Home Strat */
 
+    #home{
+        height: auto;
+        padding-bottom: 20%;
+    }
+
+    #home .row{
+        margin-top:25%;
+        flex-direction: column;
+        gap:100px;
+    }
+
+    #home .row .col p {
+    font-size: 20px;
+}
+
+    #home .row img{
+        order: 2;
+        max-width: 100%;
+    }
+    /* Home End */
+}
+@media (max-width: 824px) {
+    .videos-container, .certificates-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto !important;
+        padding: 0 15px; 
+    }
+
+    .video-card, .video-card-d, .achievement-item {
+        width: 100%; 
+        max-width: 450px; 
+        flex: 0 0 auto; 
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-card, .video-card-d, .achievement-item {
+        width: 100%;
+        max-width: 600px;  
+    }
+    #home .row{
+        margin-top: 35%;
+    }
+
+    #home .row .col h1{
+        font-size: 50px;
+        margin: 2rem 0;
+        margin-bottom:30px;
+    }
+
+    #home .row .col .cta-buttons{
+         flex-wrap: wrap;
+    }
+
+    .header{
+      padding: 0 2rem;   
+      padding-right: 1rem;
+    }
+
+
+    .dark-mode .footer-link-item span{
+        font-size: 1px;
+    }
+}
 
 /* media End */

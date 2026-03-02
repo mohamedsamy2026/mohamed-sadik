@@ -110,6 +110,9 @@ function updateUI(isDark) {
 
 
 
+// بتاع سيشكن الشهادات يبدأ
+
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.getElementById('closeLightbox');
@@ -148,3 +151,12 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
     slider.scrollBy({ left: -330, behavior: 'smooth' });
 });
+
+
+// بتاع سيشكن الشهادات ينتهي
+
+
+// بتاع سيشكن الفديوهات يبدأ
+
+
+// بتاع سيشكن فديوهات ينتهي
