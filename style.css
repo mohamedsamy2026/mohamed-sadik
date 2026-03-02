@@ -1416,6 +1416,10 @@ body.light-mode .footer-copyrights {
     #home .row{
         margin-top: 35%;
     }
+    
+    .section-title{
+        font-size: 50px;
+    }
 
     #home .row .col h1{
         font-size: 50px;
@@ -1434,10 +1438,38 @@ body.light-mode .footer-copyrights {
 
 
     .dark-mode .footer-link-item span{
-        font-size: 1px;
+        font-size: 15px;
+    }
+    .light-mode .footer-link-item span{
+        font-size: 15px;
     }
 }
 
+@media (max-width: 400px) {
+    .videos-container {
+        width: 100%;
+        margin: 0 auto !important;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;          
+        padding: 10px;     
+    }
+
+    .video-card {
+        width: 95%;             
+        max-width: 320px;       
+        min-width: auto;       
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    }
+
+    .video-card video {
+        height: 300px;           
+        border-radius: 12px;    
+    }
+    
+}
 /* media End */
 
 
@@ -1507,4 +1539,30 @@ body.light-mode .footer-copyrights {
 #loading-screen.fade-out {
     opacity: 0;
     visibility: hidden;
+}
+/* ميديا الموبايل */
+@media (max-width: 600px) { 
+    
+    .achievement-item {
+        /* الغي العرض الثابت خالص عشان ميتاكلش */
+        flex: 0 0 100% !important; 
+        max-width: 100% !important; 
+        min-width: auto !important;
+        
+        /* إضافة padding عشان الشهادة متنطش لبره الكارت */
+        padding: 10px; 
+        box-sizing: border-box; /* عشان الـ padding ميغيرش عرض الكارت */
+        background: transparent; /* عشان ميظهرش خلفية بيضاء ورا المسافات */
+        border-radius: 10px;    /* انحناء بسيط عشان تليق مع الديزاين الفاتح */
+                height: auto !important;  /* تحافظ على أبعاد الشهادة بدون مط */
+
+    }
+
+    .achievement-item img {
+        width: 100% !important;   /* الشهادة تاخد عرض الكارت بالكامل */
+        height: auto !important;  /* تحافظ على أبعاد الشهادة بدون مط */
+        object-fit: contain !important; /* ده اللي بيخلي الشهادة تظهر كاملة من غير ما يتأكل منها فتل */
+        display: block;
+        margin: 0 auto;
+    }
 }
