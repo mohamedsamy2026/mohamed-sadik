@@ -160,3 +160,18 @@ prevBtn.addEventListener('click', () => {
 
 
 // بتاع سيشكن فديوهات ينتهي
+
+
+
+
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    // إضافة كلاس الـ fade-out لبدء حركة الإخفاء الناعمة
+    loadingScreen.classList.add('fade-out');
+    
+    // إزالة العنصر تماماً من الـ DOM بعد انتهاء الحركة (0.5 ثانية)
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+    }, 500);
+});

@@ -131,7 +131,7 @@ ul{
     padding: 0 5%;
     position: fixed;
     width: 100%;
-    z-index: 99999; 
+    z-index: 9999; 
     backdrop-filter: blur(15px); 
     -webkit-backdrop-filter: blur(15px); 
     direction: rtl;
@@ -1439,3 +1439,72 @@ body.light-mode .footer-copyrights {
 }
 
 /* media End */
+
+
+
+/* تنسيق صفحة التحميل بالكامل */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* خلفية بيضاء مريحة بدل الغامق */
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* عشان تضمن إنها فوق أي حاجة تانية */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* سنترة المحتوى */
+.loader-content {
+    text-align: center;
+    font-family: 'Cairo', sans-serif; /* تأكد إنك ضايف خط كايرو */
+}
+
+/* تنسيق الـ Spinner (الدائرة) */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* لون الدائرة الأساسي */
+    border-top: 5px solid #00d4ff; /* لون الـ Animation الأزرق */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px auto;
+}
+
+/* حركة الدوران */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* تنسيق الاسم */
+.loader-name {
+    font-size: 42px;
+    color: #333; /* لون نص داكن وواضح */
+    margin: 0;
+    font-weight: 700;
+}
+
+/* تنسيق الوظيفة */
+.loader-job {
+    font-size: 25px;
+    color: #00d4ff; /* لون أزرق لتمييز الوظيفة */
+    margin: 5px 0 15px 0;
+}
+
+/* تنسيق جملة التحميل */
+.loading-text {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 300;
+}
+
+/* فئة لإخفاء صفحة التحميل عبر الـ JavaScript */
+#loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
