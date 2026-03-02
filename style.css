@@ -1070,7 +1070,8 @@ body.light-mode .achievement-item span { color: #03a7c7; }
     position: fixed; 
     top: 20px;
     right: 20px;
-    color: #00d4ff !important;
+    color: #ffffff !important;
+    background-color: red !important;
     font-size: 60px !important;
     font-weight: bold;
     cursor: pointer;
@@ -1085,8 +1086,7 @@ body.light-mode .achievement-item span { color: #03a7c7; }
     line-height: 1;
 }
 
-body.light-mode .lightbox { background-color: rgba(255, 255, 255, 0.98); }
-body.light-mode .close-lightbox { color: #020617 !important; background: rgba(0, 0, 0, 0.1); }
+body.light-mode .close-lightbox { color: #ffffff !important; background: rgba(0, 0, 0, 0.1); }
 
 
 
@@ -1474,115 +1474,99 @@ body.light-mode .footer-copyrights {
 /* media End */
 
 
-
-/* تنسيق صفحة التحميل بالكامل */
 #loading-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* خلفية بيضاء مريحة بدل الغامق */
     background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* عشان تضمن إنها فوق أي حاجة تانية */
+    z-index: 99999; 
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* سنترة المحتوى */
 .loader-content {
     text-align: center;
-    font-family: 'Cairo', sans-serif; /* تأكد إنك ضايف خط كايرو */
+    font-family: 'Cairo', sans-serif; 
 }
 
-/* تنسيق الـ Spinner (الدائرة) */
 .spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid #f3f3f3; /* لون الدائرة الأساسي */
-    border-top: 5px solid #00d4ff; /* لون الـ Animation الأزرق */
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #00d4ff; 
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 20px auto;
 }
 
-/* حركة الدوران */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* تنسيق الاسم */
 .loader-name {
     font-size: 42px;
-    color: #333; /* لون نص داكن وواضح */
+    color: #333; 
     margin: 0;
     font-weight: 700;
 }
 
-/* تنسيق الوظيفة */
 .loader-job {
     font-size: 25px;
-    color: #00d4ff; /* لون أزرق لتمييز الوظيفة */
+    color: #00d4ff; 
     margin: 5px 0 15px 0;
 }
 
-/* تنسيق جملة التحميل */
 .loading-text {
     font-size: 20px;
     color: #000000;
     font-weight: 300;
 }
 
-/* فئة لإخفاء صفحة التحميل عبر الـ JavaScript */
 #loading-screen.fade-out {
     opacity: 0;
     visibility: hidden;
 }
-/* ميديا الموبايل */
+
 @media (max-width: 600px) { 
-    
     .achievement-item {
-        /* الغي العرض الثابت خالص عشان ميتاكلش */
         flex: 0 0 100% !important; 
         max-width: 100% !important; 
         min-width: auto !important;
-        
-        /* إضافة padding عشان الشهادة متنطش لبره الكارت */
         padding: 10px; 
-        box-sizing: border-box; /* عشان الـ padding ميغيرش عرض الكارت */
-        background: transparent; /* عشان ميظهرش خلفية بيضاء ورا المسافات */
-        border-radius: 10px;    /* انحناء بسيط عشان تليق مع الديزاين الفاتح */
-                height: auto !important;  /* تحافظ على أبعاد الشهادة بدون مط */
-
+        box-sizing: border-box; 
+        background: transparent; 
+        border-radius: 10px;    
+        height: auto !important;  
     }
 
     .achievement-item img {
-        width: 100% !important;   /* الشهادة تاخد عرض الكارت بالكامل */
-        height: auto !important;  /* تحافظ على أبعاد الشهادة بدون مط */
-        object-fit: contain !important; /* ده اللي بيخلي الشهادة تظهر كاملة من غير ما يتأكل منها فتل */
+        width: 100% !important;   
+        height: auto !important;  
+        object-fit: contain !important; 
         display: block;
         margin: 0 auto;
     }
 }
 
-
 @media (max-width: 600px) {
     .videos-container, .certificates-container {
         display: flex;
-        flex-wrap: nowrap; /* ممنوع يرصهم تحت بعض */
+        flex-wrap: nowrap; 
         overflow-x: auto; 
-        scroll-snap-type: x mandatory; /* تفعيل خاصية المغناطيس */
-        gap: 0; /* إلغاء الفجوات الكبيرة اللي بتلخبط الحسابات */
+        scroll-snap-type: x mandatory; 
+        gap: 0; 
         padding: 0;
     }
 
     .achievement-item {
-        flex: 0 0 100%; /* الشهادة الواحدة تاخد عرض الشاشة بالكامل */
-        scroll-snap-align: center; /* تثبت في السنتر بالملي */
+        flex: 0 0 100%; 
+        scroll-snap-align: center; 
         box-sizing: border-box;
-        padding: 0 20px; /* المسافة اللي طلبتها عشان الشهادة متتاكلش */
+        padding: 0 20px; 
     }
 }
