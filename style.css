@@ -1418,7 +1418,7 @@ body.light-mode .footer-copyrights {
     }
     
     .section-title{
-        font-size: 50px;
+        font-size: 30px;
     }
 
     #home .row .col h1{
@@ -1564,5 +1564,24 @@ body.light-mode .footer-copyrights {
         object-fit: contain !important; /* ده اللي بيخلي الشهادة تظهر كاملة من غير ما يتأكل منها فتل */
         display: block;
         margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .videos-container, .certificates-container {
+        display: flex;
+        flex-wrap: nowrap; /* ممنوع يرصهم تحت بعض */
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; /* تفعيل خاصية المغناطيس */
+        gap: 0; /* إلغاء الفجوات الكبيرة اللي بتلخبط الحسابات */
+        padding: 0;
+    }
+
+    .achievement-item {
+        flex: 0 0 100%; /* الشهادة الواحدة تاخد عرض الشاشة بالكامل */
+        scroll-snap-align: center; /* تثبت في السنتر بالملي */
+        box-sizing: border-box;
+        padding: 0 20px; /* المسافة اللي طلبتها عشان الشهادة متتاكلش */
     }
 }

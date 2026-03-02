@@ -112,27 +112,29 @@ function updateUI(isDark) {
 
 // بتاع سيشكن الشهادات يبدأ
 
-
+// --- 1. كود تكبير الصور (Lightbox) ---
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.getElementById('closeLightbox');
 const images = document.querySelectorAll('.achievement-item img');
 
-// فتح الصورة
+// فتح الصورة عند الضغط عليها
 images.forEach(img => {
     img.addEventListener('click', () => {
         lightbox.classList.add('active');
         lightboxImg.src = img.src;
-        document.body.style.overflow = 'hidden'; 
+        document.body.style.overflow = 'hidden'; // منع سكرول الصفحة واللايت بوكس مفتوح
     });
 });
 
+// قفل الصورة عند الضغط على زر الإغلاق
 closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // منع تداخل الأحداث
+    e.stopPropagation(); 
     lightbox.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
 
+// قفل الصورة عند الضغط في أي مكان خارج الصورة
 lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) {
         lightbox.classList.remove('active');
@@ -140,18 +142,41 @@ lightbox.addEventListener('click', (e) => {
     }
 });
 
-const slider = document.querySelector('.achievements-slider');
+
+// --- 2. كود السلايدر (تحريك الشهادات والفيديوهات) ---
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 
-nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: 330, behavior: 'smooth' });
-});
+// ربط الأزرار بـ الفانكشن اللي بتقلص الشهادات واحدة واحدة
+if(nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+        scrollCertificates(1); // تحريك للامام
+    });
 
-prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -330, behavior: 'smooth' });
-});
+    prevBtn.addEventListener('click', () => {
+        scrollCertificates(-1); // تحريك للخلف
+    });
+}
 
+function scrollCertificates(direction) {
+    // تأكد إن الكلاس ده هو اللي شايل الكروت (السلايدر نفسه)
+    const container = document.querySelector('.achievements-slider') || document.querySelector('.certificates-container');
+    const card = container.querySelector('.achievement-item');
+    
+    if (container && card) {
+        // حساب عرض الكارت + المسافة (Gap) اللي بين الكروت عشان القفزة تيجي "مسطرة"
+        const style = window.getComputedStyle(container);
+        const gap = parseInt(style.gap) || parseInt(style.columnGap) || 0;
+        
+        // القيمة اللي هيتحركها السكرول = عرض الكارت + الفراغ اللي جنبه
+        const scrollAmount = card.offsetWidth + gap;
+        
+        container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
 
 // بتاع سيشكن الشهادات ينتهي
 
