@@ -1091,7 +1091,8 @@ body.light-mode .close-lightbox { color: #020617 !important; background: rgba(0,
 
 
 .click-hint{
-    font-size: 16px;
+font-size: 14px;
+    line-height: 1.4;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1099,8 +1100,8 @@ body.light-mode .close-lightbox { color: #020617 !important; background: rgba(0,
     gap: 8px;
     padding: 5px 8px;
     border-radius: 8px;
-    width: 170px;
-    margin:10px auto;
+    width: 117px;
+    margin: 10px auto;
 }
 .dark-mode .click-hint {
       color: #ffffff; 
