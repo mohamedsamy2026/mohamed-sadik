@@ -24,9 +24,10 @@ document.querySelectorAll(".navbar ul li a").forEach((link) => {
 
 
 
+
+
 /* About Start */
 
-// وظيفة لإظهار العناصر عند التمرير (Scroll)
 function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
@@ -45,17 +46,18 @@ function reveal() {
 
 window.addEventListener("scroll", reveal);
 
-// تشغيلها مرة عند التحميل عشان لو السيكشن باين أصلاً
+
 reveal();
 
 /* About End */
 
 
 
+
+
 // ==========================================
 // الوضع الليلي/النهاري مع تغيير اللوجو يبدأ
 // ==========================================
-
 
 
 (function() {
@@ -78,20 +80,16 @@ reveal();
     updateUI(isDark);
   }
 
-// 3. تحديث شكل الزر والنص فقط
 function updateUI(isDark) {
   if (isDark) {
-    // لما يكون المود غامق، حط أيقونة الهلال اللي إنت اخترتها
     circle.innerHTML = '<i class="fa-solid fa-moon fa-flip-horizontal" style="color: rgb(255, 255, 255);"></i>';
   } else {
-    // لما يكون المود فاتح، رجع الشمس (أو أي أيقونة تانية)
     circle.innerHTML = '☀️'; 
   }
   
   toggle.setAttribute('aria-pressed', isDark);
 }
 
-  // 4. الأحداث (الضغط بالكيبورد أو الماوس)
   toggle.addEventListener('click', toggleMode);
   toggle.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -110,31 +108,28 @@ function updateUI(isDark) {
 
 
 
+
 // بتاع سيشكن الشهادات يبدأ
 
-// --- 1. كود تكبير الصور (Lightbox) ---
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.getElementById('closeLightbox');
 const images = document.querySelectorAll('.achievement-item img');
 
-// فتح الصورة عند الضغط عليها
 images.forEach(img => {
     img.addEventListener('click', () => {
         lightbox.classList.add('active');
         lightboxImg.src = img.src;
-        document.body.style.overflow = 'hidden'; // منع سكرول الصفحة واللايت بوكس مفتوح
+        document.body.style.overflow = 'hidden'; 
     });
 });
 
-// قفل الصورة عند الضغط على زر الإغلاق
 closeBtn.addEventListener('click', (e) => {
     e.stopPropagation(); 
     lightbox.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
 
-// قفل الصورة عند الضغط في أي مكان خارج الصورة
 lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) {
         lightbox.classList.remove('active');
@@ -143,32 +138,27 @@ lightbox.addEventListener('click', (e) => {
 });
 
 
-// --- 2. كود السلايدر (تحريك الشهادات والفيديوهات) ---
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 
-// ربط الأزرار بـ الفانكشن اللي بتقلص الشهادات واحدة واحدة
 if(nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
-        scrollCertificates(1); // تحريك للامام
+        scrollCertificates(1); 
     });
 
     prevBtn.addEventListener('click', () => {
-        scrollCertificates(-1); // تحريك للخلف
+        scrollCertificates(-1); 
     });
 }
 
 function scrollCertificates(direction) {
-    // تأكد إن الكلاس ده هو اللي شايل الكروت (السلايدر نفسه)
     const container = document.querySelector('.achievements-slider') || document.querySelector('.certificates-container');
     const card = container.querySelector('.achievement-item');
     
     if (container && card) {
-        // حساب عرض الكارت + المسافة (Gap) اللي بين الكروت عشان القفزة تيجي "مسطرة"
         const style = window.getComputedStyle(container);
         const gap = parseInt(style.gap) || parseInt(style.columnGap) || 0;
         
-        // القيمة اللي هيتحركها السكرول = عرض الكارت + الفراغ اللي جنبه
         const scrollAmount = card.offsetWidth + gap;
         
         container.scrollBy({
@@ -181,22 +171,18 @@ function scrollCertificates(direction) {
 // بتاع سيشكن الشهادات ينتهي
 
 
-// بتاع سيشكن الفديوهات يبدأ
 
 
-// بتاع سيشكن فديوهات ينتهي
-
-
-
+// loding body start
 
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     
-    // إضافة كلاس الـ fade-out لبدء حركة الإخفاء الناعمة
     loadingScreen.classList.add('fade-out');
     
-    // إزالة العنصر تماماً من الـ DOM بعد انتهاء الحركة (0.5 ثانية)
     setTimeout(() => {
         loadingScreen.style.display = 'none';
     }, 500);
 });
+
+// loding body End

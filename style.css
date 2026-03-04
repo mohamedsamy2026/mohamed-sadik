@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
 
 
+/* Normaly Start */
 
 * {
   margin: 0;
@@ -12,14 +13,6 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-}
-
-html, body {
-    background-color: #020617; 
-}
-
-body.light-mode {
-    background-color: #ffffff;
 }
 
 
@@ -41,15 +34,15 @@ body.light-mode {
     border: none;
 }
 
-.container-1{
-  max-width: 1400px;
-  margin: auto;
-}
-
-
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(3, 127, 3); 
+}
+
+
+.container-1{
+  max-width: 1400px;
+  margin: auto;
 }
 
 
@@ -61,6 +54,22 @@ a{
 ul{
   list-style: none;
 }
+
+
+/* Normaly End */
+
+
+/* لون الصفحه */
+
+html, body {
+    background-color: #020617; 
+}
+
+body.light-mode {
+    background-color: #ffffff;
+}
+
+
 
 
 /* زر الوضع الليلي والنهاري  يبدأ*/
@@ -311,6 +320,7 @@ body.light-mode .navbar ul li a {
 
 
 /* Header End */
+
 
 
 /* Home Start */
@@ -645,8 +655,8 @@ body.light-mode .about-card:hover {
 /* About End */
 
 
-/* Expertise Start */
 
+/* Expertise Start */
 
 
 body.light-mode #experience {
@@ -815,8 +825,9 @@ body.light-mode .exp-card:hover .exp-icon i {
 .dark-mode #achievements{
     background-color: #090e23 !important;
 }
-/* فديوهات يبدأ */
 
+
+/* فديوهات يبدأ */
 
 .videos-container {
     display: flex;
@@ -877,6 +888,7 @@ body.light-mode .exp-card:hover .exp-icon i {
 
 
 
+/* الصور تبدأ */
 
 .achievements-grid {
     display: grid;
@@ -1032,7 +1044,10 @@ body.light-mode .achievement-item span { color: #03a7c7; }
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* الصور تنتهي */
 
+
+/* زرار الاكس */
 
 .lightbox {
     display: none;
@@ -1364,115 +1379,9 @@ body.light-mode .footer-copyrights {
 /* Contact End */
 
 
-/* media Start */
-
-@media (max-width: 1500px) {
-    /* Home Strat */
-
-    #home{
-        height: auto;
-        padding-bottom: 20%;
-    }
-
-    #home .row{
-        margin-top:25%;
-        flex-direction: column;
-        gap:100px;
-    }
-
-    #home .row .col p {
-    font-size: 20px;
-}
-
-    #home .row img{
-        order: 2;
-        max-width: 100%;
-    }
-    /* Home End */
-}
-@media (max-width: 824px) {
-    .videos-container, .certificates-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 0 auto !important;
-        padding: 0 15px; 
-    }
-
-    .video-card, .video-card-d, .achievement-item {
-        width: 100%; 
-        max-width: 450px; 
-        flex: 0 0 auto; 
-        margin-bottom: 20px !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .video-card, .video-card-d, .achievement-item {
-        width: 100%;
-        max-width: 600px;  
-    }
-    #home .row{
-        margin-top: 35%;
-    }
-    
-    .section-title{
-        font-size: 30px;
-    }
-
-    #home .row .col h1{
-        font-size: 50px;
-        margin: 2rem 0;
-        margin-bottom:30px;
-    }
-
-    #home .row .col .cta-buttons{
-         flex-wrap: wrap;
-    }
-
-    .header{
-      padding: 0 2rem;   
-      padding-right: 1rem;
-    }
 
 
-    .dark-mode .footer-link-item span{
-        font-size: 15px;
-    }
-    .light-mode .footer-link-item span{
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 400px) {
-    .videos-container {
-        width: 100%;
-        margin: 0 auto !important;
-        display: flex;
-        flex-direction: column; 
-        align-items: center; 
-        gap: 15px;          
-        padding: 10px;     
-    }
-
-    .video-card {
-        width: 95%;             
-        max-width: 320px;       
-        min-width: auto;       
-        margin: 0 auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    }
-
-    .video-card video {
-        height: 300px;           
-        border-radius: 12px;    
-    }
-    
-}
-/* media End */
-
+/* loding body Start*/
 
 #loading-screen {
     position: fixed;
@@ -1532,7 +1441,85 @@ body.light-mode .footer-copyrights {
     visibility: hidden;
 }
 
-@media (max-width: 600px) { 
+/* loding body End*/
+
+
+
+
+
+
+/* media Start */
+
+@media (max-width: 1500px) {
+    /* Home Strat */
+
+    #home{
+        height: auto;
+        padding-bottom: 20%;
+    }
+
+    #home .row{
+        margin-top:25%;
+        flex-direction: column;
+        gap:100px;
+    }
+
+    #home .row .col p {
+    font-size: 20px;
+}
+
+    #home .row img{
+        order: 2;
+        max-width: 100%;
+    }
+    /* Home End */
+}
+
+
+@media (max-width: 824px) {
+    .videos-container, .certificates-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto !important;
+        padding: 0 15px; 
+    }
+
+    .video-card, .video-card-d, .achievement-item {
+        width: 100%; 
+        max-width: 450px; 
+        flex: 0 0 auto; 
+        margin-bottom: 20px !important;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .video-card, .video-card-d, .achievement-item {
+        width: 100%;
+        max-width: 600px;  
+    }
+    #home .row{
+        margin-top: 35%;
+    }
+    
+    .section-title{
+        font-size: 30px;
+    }
+
+    #home .row .col h1{
+        font-size: 50px;
+        margin: 2rem 0;
+        margin-bottom:30px;
+    }
+
+    #home .row .col .cta-buttons{
+         flex-wrap: wrap;
+    }
+
     .achievement-item {
         flex: 0 0 100% !important; 
         max-width: 100% !important; 
@@ -1551,9 +1538,20 @@ body.light-mode .footer-copyrights {
         display: block;
         margin: 0 auto;
     }
-}
 
-@media (max-width: 600px) {
+    .header{
+      padding: 0 2rem;   
+      padding-right: 1rem;
+    }
+
+
+    .dark-mode .footer-link-item span{
+        font-size: 15px;
+    }
+    .light-mode .footer-link-item span{
+        font-size: 15px;
+    }
+
     .videos-container, .certificates-container {
         display: flex;
         flex-wrap: nowrap; 
@@ -1570,3 +1568,33 @@ body.light-mode .footer-copyrights {
         padding: 0 20px; 
     }
 }
+
+
+@media (max-width: 400px) {
+    .videos-container {
+        width: 100%;
+        margin: 0 auto !important;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;          
+        padding: 10px;     
+    }
+
+    .video-card {
+        width: 95%;             
+        max-width: 320px;       
+        min-width: auto;       
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    }
+
+    .video-card video {
+        height: 300px;           
+        border-radius: 12px;    
+    }
+    
+}
+
+/* media End */
+
