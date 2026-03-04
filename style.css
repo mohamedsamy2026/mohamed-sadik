@@ -1224,7 +1224,6 @@ font-size: 30px;
 }
 
 .social-circle:hover {
-     transform: translateY(-10px);
       color: #fff;
      }
 
@@ -1264,15 +1263,16 @@ font-size: 30px;
 
 
 }
-    .social-circle.tiktok-link i {
+.social-circle.tiktok-link i {
     color: #fff !important; 
     font-size: 24px;
 }
 
-/* الحركة لما الماوس ييجي عليه */
 .social-circle.tiktok-link:hover {
     background-color: #ff0050 !important;
 }
+
+
 .footer-logo-circle {
     width: 200px;
     height: 200px;
