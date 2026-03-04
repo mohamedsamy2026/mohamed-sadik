@@ -1092,8 +1092,10 @@ body.light-mode .achievement-item span { color: #03a7c7; }
     cursor: pointer;
     z-index: 100000 !important;
     background: rgba(0, 0, 0, 0.6); 
-    width: 60px;
+    width: 65px;
     height: 60px;
+    padding-left: 3px;
+    padding-bottom: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1475,6 +1477,13 @@ body.light-mode .footer-copyrights {
 
 @media (max-width: 1500px) {
     /* Home Strat */
+
+    .close-lightbox {
+    padding-left: 0px;
+    padding-bottom: 0px;
+
+}
+
 
     #home{
         height: auto;
