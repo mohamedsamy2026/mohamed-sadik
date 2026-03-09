@@ -1,0 +1,30 @@
+# 1. ملفات النظام (مخلفات الويندوز والماك)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 2. ملفات التصميم (لو بدأت تستخدم XD أو Figma)
+*.xd
+*.fig
+*.sketch
+*.psd
+*.ai
+
+# 3. إعدادات المحرر (VS Code)
+.vscode/
+
+# 4. تأمين بيانات المستقبل (Firebase / Environment)
+.env
+.env.local
+google-services.json
+firebase-debug.log*
+
+# 5. ملفات مضغوطة أو احتياطية
+*.zip
+*.rar
+*.7z
+*.bak
+
+# 6. تجاهل ملفات الميديا الكبيرة جداً (اختياري)
+# بما إن عندك فيديوهات في فولدر vidies، لو مساحتها كبيرة يفضل م ترفعهاش
+# vidies/*.mp4
