@@ -65,7 +65,7 @@ html, body {
     background-color: #020617; 
 }
 
-body.light-mode {
+body.dark-mode {
     background-color: #ffffff;
 }
 
@@ -1414,7 +1414,7 @@ body.light-mode .footer-copyrights {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff; 
+    background-color: #020617; 
     display: flex;
     justify-content: center;
     align-items: center;
